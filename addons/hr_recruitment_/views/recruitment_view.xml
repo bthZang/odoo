@@ -1,0 +1,45 @@
+<odoo>
+
+<record id="recruitment_view_tree" model="ir.ui.view">
+		<field name="name">recruitment.tree</field>
+		<field name="model">recruitment</field>
+		<field name="arch" type="xml">
+			<tree string="Recruitment">
+				<field name="name" />
+				<field name="address" />
+				<field name="work_phone" />
+				<field name="work_email" />
+			</tree>
+		</field>
+	</record>
+
+	<record id="recruitment_view_form" model="ir.ui.view">
+		<field name="name">recruitment.form</field>
+		<field name="model">recruitment</field>
+		<field name="arch" type="xml">
+			<form string="Recruitment">
+				<sheet>
+					<group>
+						<group>
+							<field name="name" />
+							<field name="address" />
+						</group>
+						<group>
+							<field name="work_phone" />
+							<field name="work_email" />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="recruitment_action" model="ir.actions.act_window">
+		<field name="name">Recruitment</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">recruitment</field>
+	</record>
+
+	<!-- <menuitem id="menu" name="Recruitment" />
+	<menuitem id="menu_recruitment" name="Recruitment" parent="menu" action='recruitment_action' /> -->
+</odoo>
