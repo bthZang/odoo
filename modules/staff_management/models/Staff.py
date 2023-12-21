@@ -1,0 +1,15 @@
+from odoo import models, fields
+
+
+class Staff(models.Model):
+    _name = "human_resource.staff"
+    _description = "Staff information"
+
+    name = fields.Char(string="Tên nhân viên")
+    phone = fields.Char(string="Số điện thoại")
+    email = fields.Char(string="Email")
+    address = fields.Char(string="Địa chỉ")
+    role = fields.Selection([('admin', 'Quản lý'), ('hr_staff', 'Nhân viên quản lý nhân sự'), ('customer_service_staff', 'Nhân viên chăm sóc khách hàng'), ('staff', 'Nhân viên')], string="Loại nhân viên")
+
+    username = fields.Char(string="Tên đăng nhập")
+    password = fields.Char(string="Mật khẩu")

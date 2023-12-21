@@ -39,11 +39,4 @@
 		<field name="type">ir.actions.act_window</field>
 		<field name="res_model">hrr</field>
 	</record>
-
-	<menuitem id="menu_field" name="Human Resource" />
-	<menuitem id="menu_hrr" name="Hrr" parent="menu_field" action='hrr_action' />
-	<menuitem id="menu_staff" name="Staff" parent="menu_field" action='hr_staff_.staff_action' />
-	<menuitem id="menu_recruitment" name="Recruitment" parent="menu_field" action='hr_recruitment_.recruitment_action' />
-	<menuitem id="menu_timekeeping" name="Timekeeping" parent="menu_field" action='hr_timekeeping_.timekeeping_action' />
-
 </odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <menuitem id="department_menu_root" name="Department Management">
+        <menuitem id="department_home" name="Home">
+            <menuitem id="department_list" action="department_list_view_action"/>
+        </menuitem>
+    </menuitem>
+
+    <record id="department_list_view_action" model="ir.actions.act_window">
+        <field name="name">List department</field>
+        <field name="res_model">human_resource.department</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Define a new department
+            </p>
+        </field>
+    </record>
+
+    <record id="department_list_view" model="ir.ui.view">
+        <field name="name">human_resource.department.tree</field>
+        <field name="model">human_resource.department</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách phòng ban">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="crm_lost_reason_view_form" model="ir.ui.view">
+        <field name="name">human_resource.department.form</field>
+        <field name="model">human_resource.department</field>
+        <field name="arch" type="xml">
+            <form string="Lost Reason">
+                <sheet>
+                    <h1 class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <field name="name" class=""/>
+                    </h1>
+                    <div>
+                        <div class="oe_edit_only">
+                            <label for="description"/>
+                        </div>
+                        <textarea class="mb32">
+                            <field name="description" class="mb16"/>
+                        </textarea>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
