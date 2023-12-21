@@ -11,5 +11,6 @@ class Staff(models.Model):
     address = fields.Char(string="Địa chỉ")
     role = fields.Selection([('admin', 'Quản lý'), ('hr_staff', 'Nhân viên quản lý nhân sự'), ('customer_service_staff', 'Nhân viên chăm sóc khách hàng'), ('staff', 'Nhân viên')], string="Loại nhân viên")
 
-    username = fields.Char(string="Tên đăng nhập")
     password = fields.Char(string="Mật khẩu")
+
+    department = fields.Many2one('human_resource.department', string="Phòng ban")

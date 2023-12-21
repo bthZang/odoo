@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-hr_recruitment_.access_recruitment,access_recruitment,hr_recruitment_.model_recruitment,base.group_user,1,0,0,0
-hr_timekeeping_.access_timekeeping,access_timekeeping,hr_timekeeping_.model_timekeeping,base.group_user,1,0,0,0
-hr_staff_.access_staff,access_staff,hr_staff_.model_staff,base.group_user,1,0,0,0

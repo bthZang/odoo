@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+staff_management.access_human_resource_staff,access_human_resource_staff,staff_management.model_human_resource_staff,base.group_user,1,1,1,1
+staff_management.access_human_resource_department,access_human_resource_staff,department_management.model_human_resource_department,base.group_user,1,1,1,1

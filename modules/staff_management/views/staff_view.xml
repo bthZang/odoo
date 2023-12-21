@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <menuitem id="human_resource_staff_menu_root" name="Staff Management">
+        <menuitem id="human_resource_staff_home" name="Home">
+            <menuitem id="human_resource_staff_list" action="human_resource_staff_list_view_action"/>
+        </menuitem>
+    </menuitem>
+
+    <record id="human_resource_staff_list_view_action" model="ir.actions.act_window">
+        <field name="name">Staff list</field>
+        <field name="res_model">human_resource.staff</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Define a new staff
+            </p>
+        </field>
+    </record>
+
+    <record id="staff_list_search" model="ir.ui.view">
+        <field name="name">human_resource.staff.search</field>
+        <field name="model">human_resource.staff</field>
+        <field name="arch" type="xml">
+            <search string="Tìm kiếm nhân viên">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="role"/>
+                <separator/>
+                <group expand="1" string="Loại nhân viên">
+                    <filter string="Phân theo loại nhân viên" name="role"
+                            context="{'group_by':'role'}"/>
+                </group>
+                <group expand="1" string="Phòng ban">
+                    <filter string="Phân loại theo phòng ban" name="role"
+                            context="{'group_by':'department'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="staff_list_view" model="ir.ui.view">
+        <field name="name">human_resource.staff.tree</field>
+        <field name="model">human_resource.staff</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách nhân viên">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="address"/>
+                <field name="role"/>
+                <field name="department"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="staff_human_resource_add_form" model="ir.ui.view">
+        <field name="name">human_resource.staff.form</field>
+        <field name="model">human_resource.staff</field>
+        <field name="arch" type="xml">
+            <form string="Add staff">
+                <sheet>
+                    <div class="oe_title">
+                        <h1 class="mb8">
+                            <field name="name"/>
+                        </h1>
+                        <group>
+                            <field name="role"/>
+                        </group>
+                    </div>
+                    <group string="Thông tin cơ bản">
+                        <group>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="phone"/>
+                        </group>
+                        <group>
+                            <field name="address"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Phân quyền">
+                        </page>
+                        <page string="Phòng ban">
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

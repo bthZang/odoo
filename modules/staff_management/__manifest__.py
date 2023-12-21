@@ -6,7 +6,8 @@
     'summary': 'Centralize employee information',
     'depends': [],
     'data': [
-        'views/department_view.xml',
+        'views/staff_view.xml',
+        'security/ir.model.access.csv'
     ],
     'demo': [],
     'installable': True,
