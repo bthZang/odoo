@@ -10,7 +10,7 @@
     <record id="human_resource_staff_list_view_action" model="ir.actions.act_window">
         <field name="name">Staff list</field>
         <field name="res_model">human_resource.staff</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Define a new staff
@@ -61,14 +61,19 @@
         <field name="arch" type="xml">
             <form string="Add staff">
                 <sheet>
-                    <div class="oe_title">
-                        <h1 class="mb8">
-                            <field name="name"/>
-                        </h1>
-                        <group>
+                    <group>
+                        <div class="width:100%;">
+                            <label for="name"/>
+                            <h1 class="mb8">
+                                <field name="name"/>
+                            </h1>
+                            <label for="role"/>
                             <field name="role"/>
+                        </div>
+                        <group>
+                            <field name="image" widget="image" string="Ảnh đại diện" class=""/>
                         </group>
-                    </div>
+                    </group>
                     <group string="Thông tin cơ bản">
                         <group>
                             <field name="email"/>
@@ -79,15 +84,83 @@
                         <group>
                             <field name="address"/>
                         </group>
+                        <group>
+                            <field name="job_position"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Phân quyền">
                         </page>
                         <page string="Phòng ban">
+                            <group>
+                                <group>
+                                    <field name="department" string="Phòng ban"/>
+                                </group>
+                            </group>
                         </page>
                     </notebook>
                 </sheet>
             </form>
         </field>
+    </record>
+
+    <record id="view_staff_list_kanban" model="ir.ui.view">
+        <field name="name">human_resource.staff.kanban</field>
+        <field name="model">human_resource.staff</field>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" archivable="false" sample="1">
+                <field name="name"/>
+                <field name="image" class="oe_avatar"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+                            <field name="image" class="o_kanban_image_fill_left d-block" preview_image="image"
+                                   widget="background_image" options="{'zoom': true, 'zoom_delay': 1000}"/>
+
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name" placeholder="Employee's Name"/>
+                                        </strong>
+                                        <span t-if="record.role.raw_value" class="o_kanban_record_subtitle">
+                                            <field name="role"/>
+                                        </span>
+                                    </div>
+                                </div>
+                                <field name="department" widget="many2one_tags" options="{'color_field': 'color'}"/>
+                                <ul>
+                                    <li id="last_login"/>
+                                    <li t-if="record.email.raw_value" class="o_text_overflow">
+                                        <field name="email"/>
+                                    </li>
+                                    <li t-if="record.phone.raw_value" class="o_force_ltr">
+                                        <field name="phone"/>
+                                    </li>
+                                </ul>
+                            </div>
+<!--                            <div class="oe_kanban_content o_hr_employee_kanban_bottom position-absolute bottom-0 start-0 end-0 me-2 pe-none">-->
+<!--                                <div class="o_kanban_record_bottom">-->
+<!--                                    <div class="oe_kanban_bottom_left"/>-->
+<!--                                    <div class="oe_kanban_bottom_right float-end pe-auto">-->
+<!--                                        <widget name="hr_employee_chat"/>-->
+<!--                                        <div class="hr_activity_container mb-1 me-n1">-->
+<!--                                            <field name="activity_ids" widget="kanban_activity"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="staff_view_staff_list_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_staff_list_kanban"/>
     </record>
 </odoo>

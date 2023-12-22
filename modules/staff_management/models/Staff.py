@@ -9,7 +9,9 @@ class Staff(models.Model):
     phone = fields.Char(string="Số điện thoại")
     email = fields.Char(string="Email")
     address = fields.Char(string="Địa chỉ")
+    job_position = fields.Char(string="Chức vụ")
     role = fields.Selection([('admin', 'Quản lý'), ('hr_staff', 'Nhân viên quản lý nhân sự'), ('customer_service_staff', 'Nhân viên chăm sóc khách hàng'), ('staff', 'Nhân viên')], string="Loại nhân viên")
+    image = fields.Char(String="Ảnh")
 
     password = fields.Char(string="Mật khẩu")
 
