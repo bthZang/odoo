@@ -25,6 +25,7 @@
             <tree string="Danh sách phòng ban">
                 <field name="name"/>
                 <field name="description"/>
+                <field name="total_employee"/>
             </tree>
         </field>
     </record>
