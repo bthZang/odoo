@@ -1,4 +1,6 @@
-from odoo import models, fields
+# -*- coding: utf-8 -*-
+
+from odoo import models, fields, api
 
 
 class Work(models.Model):

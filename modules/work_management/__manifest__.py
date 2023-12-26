@@ -1,19 +1,24 @@
+# -*- coding: utf-8 -*-
 {
-    'name': 'Work assignment',
-    'version': '1.1',
-    'category': 'Human Resource/Work assignment',
-    'sequence': 2,
-    'summary': 'Manage work assignment for employee',
-    'depends': [
-        'department_management',
-        'staff_management',
-    ],
+    'name': "Work management",
+
+    'summary': """
+        Short (1 phrase/line) summary of the module's purpose, used as
+        subtitle on modules listing or apps.openerp.com""",
+
+    'description': """
+        Long description of module's purpose
+    """,
+
+    'author': "Hoang Zangg",
+    'category': 'Human Resource/Staff Management',
+    'version': '0.1',
+    'depends': ['staff_management', 'department_management'],
     'data': [
-        'views/self_work_view.xml',
-        'security/ir.model.access.csv'
+        'security/ir.model.access.csv',
+        'views/views.xml',
+        'views/templates.xml',
     ],
-    'demo': [],
-    'installable': True,
-    'application': True,
-    'auto_install': False,
+    'demo': [
+    ],
 }
