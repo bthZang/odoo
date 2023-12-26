@@ -1,14 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
-
-    <menuitem id="human_resource_staff_menu_root" name="Staff Management">
-        <menuitem id="human_resource_staff_home" name="Home">
-            <menuitem id="human_resource_staff_list" action="human_resource_staff_list_view_action"/>
-        </menuitem>
-    </menuitem>
-
-    <record id="human_resource_staff_list_view_action" model="ir.actions.act_window">
-        <field name="name">Staff list</field>
+    <record id="staff_management.action_window" model="ir.actions.act_window">
+        <field name="name">Staff management</field>
         <field name="res_model">human_resource.staff</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
@@ -17,6 +10,13 @@
             </p>
         </field>
     </record>
+
+    <menuitem name="Staff" id="staff_management.menu_root"/>
+
+    <menuitem name="Home" id="staff_management.menu_1" parent="staff_management.menu_root"/>
+
+    <menuitem name="List" id="staff_management.menu_1_list" parent="staff_management.menu_1"
+              action="staff_management.action_window"/>
 
     <record id="staff_list_search" model="ir.ui.view">
         <field name="name">human_resource.staff.search</field>

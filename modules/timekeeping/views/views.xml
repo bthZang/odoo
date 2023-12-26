@@ -1,60 +1,20 @@
+<?xml version="1.0"?>
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="timekeeping.list">
-      <field name="name">timekeeping list</field>
-      <field name="model">timekeeping.timekeeping</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
+    <record id="timekeeping.action_window" model="ir.actions.act_window">
+        <field name="name">Timekeeping</field>
+        <field name="res_model">human_resource.timekeeping</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Bạn chưa chấm công
+            </p>
+        </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="timekeeping.action_window">
-      <field name="name">timekeeping window</field>
-      <field name="res_model">timekeeping.timekeeping</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
+    <menuitem name="Timekeeping" id="timekeeping.menu_root"/>
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="timekeeping.action_server">
-      <field name="name">timekeeping server</field>
-      <field name="model_id" ref="model_timekeeping_timekeeping"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
+    <menuitem name="Home" id="timekeeping.menu_1" parent="timekeeping.menu_root"/>
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="timekeeping" id="timekeeping.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="timekeeping.menu_1" parent="timekeeping.menu_root"/>
-    <menuitem name="Menu 2" id="timekeeping.menu_2" parent="timekeeping.menu_root"/>
--->
-    <!-- actions -->
-<!--
     <menuitem name="List" id="timekeeping.menu_1_list" parent="timekeeping.menu_1"
               action="timekeeping.action_window"/>
-    <menuitem name="Server to list" id="timekeeping" parent="timekeeping.menu_2"
-              action="timekeeping.action_server"/>
--->
-  </data>
 </odoo>

@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Timekeeping(models.Model):
@@ -9,3 +7,4 @@ class Timekeeping(models.Model):
 
     checkin_date = fields.Datetime(string="Thời gian vào")
     checkout_date = fields.Datetime(string="Thời gian ra")
+    staff = fields.Many2one('human_resource.staff', string='Nhân viên')

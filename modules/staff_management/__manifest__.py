@@ -5,7 +5,6 @@
     'sequence': 2,
     'summary': 'Centralize employee information',
     'depends': [
-        'department_management',
     ],
     'data': [
         'views/staff_view.xml',
