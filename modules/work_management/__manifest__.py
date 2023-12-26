@@ -1,14 +1,15 @@
 {
-    'name': 'Staff Management',
+    'name': 'Work assignment',
     'version': '1.1',
-    'category': 'Human Resource/Staff Management',
+    'category': 'Human Resource/Work assignment',
     'sequence': 2,
-    'summary': 'Centralize employee information',
+    'summary': 'Manage work assignment for employee',
     'depends': [
         'department_management',
+        'staff_management',
     ],
     'data': [
-        'views/staff_view.xml',
+        'views/self_work_view.xml',
         'security/ir.model.access.csv'
     ],
     'demo': [],

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <menuitem id="human_resource_work_menu_root" name="Work Management">
+        <menuitem id="human_resource_work_home" name="Home">
+            <menuitem id="human_resource_work_list" action="human_resource_work_list_view_action"/>
+        </menuitem>
+    </menuitem>
+
+    <record id="human_resource_work_list_view_action" model="ir.actions.act_window">
+        <field name="name">Work list</field>
+        <field name="res_model">human_resource.work</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Bạn không có công việc nào
+            </p>
+        </field>
+    </record>
+
+    <record id="work_list_search" model="ir.ui.view">
+        <field name="name">human_resource.work.search</field>
+        <field name="model">human_resource.work</field>
+    </record>
+
+    <record id="work_list_view" model="ir.ui.view">
+        <field name="name">human_resource.work.tree</field>
+        <field name="model">human_resource.work</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách công việc">
+                <field name="title"/>
+                <field name="phone"/>
+                <field name="state"/>
+                <field name="deadline"/>
+                <field name="reviewer"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    <record id="staff_human_resource_add_form" model="ir.ui.view">-->
+    <!--        <field name="name">human_resource.staff.form</field>-->
+    <!--        <field name="model">human_resource.staff</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <form string="Add staff">-->
+    <!--                <sheet>-->
+    <!--                    <group>-->
+    <!--                        <div class="width:100%;">-->
+    <!--                            <label for="name"/>-->
+    <!--                            <h1 class="mb8">-->
+    <!--                                <field name="name"/>-->
+    <!--                            </h1>-->
+    <!--                            <label for="role"/>-->
+    <!--                            <field name="role"/>-->
+    <!--                        </div>-->
+    <!--                        <group>-->
+    <!--                            <field name="image" widget="image" string="Ảnh đại diện" class=""/>-->
+    <!--                        </group>-->
+    <!--                    </group>-->
+    <!--                    <group string="Thông tin cơ bản">-->
+    <!--                        <group>-->
+    <!--                            <field name="email"/>-->
+    <!--                        </group>-->
+    <!--                        <group>-->
+    <!--                            <field name="phone"/>-->
+    <!--                        </group>-->
+    <!--                        <group>-->
+    <!--                            <field name="address"/>-->
+    <!--                        </group>-->
+    <!--                        <group>-->
+    <!--                            <field name="job_position"/>-->
+    <!--                        </group>-->
+    <!--                    </group>-->
+    <!--                    <notebook>-->
+    <!--                        <page string="Phân quyền">-->
+    <!--                        </page>-->
+    <!--                        <page string="Phòng ban">-->
+    <!--                            <group>-->
+    <!--                                <group>-->
+    <!--                                    <field name="department" string="Phòng ban"/>-->
+    <!--                                </group>-->
+    <!--                            </group>-->
+    <!--                        </page>-->
+    <!--                    </notebook>-->
+    <!--                </sheet>-->
+    <!--            </form>-->
+    <!--        </field>-->
+    <!--    </record>-->
+</odoo>
