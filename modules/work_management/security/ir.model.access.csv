@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_work_management_work_management,work_management.work,model_work_management_work,base.group_user,1,1,1,1
