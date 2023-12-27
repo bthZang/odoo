@@ -132,25 +132,30 @@
                                 <field name="department" widget="many2one_tags" options="{'color_field': 'color'}"/>
                                 <ul>
                                     <li id="last_login"/>
+                                    <li t-if="record.job_position.raw_value" class="o_force_ltr">
+                                        <strong>
+                                            <field name="job_position"/>
+                                        </strong>
+                                    </li>
+                                    <li t-else="" class="o_force_ltr">
+                                        <strong>Không có chức vụ</strong>
+                                    </li>
                                     <li t-if="record.email.raw_value" class="o_text_overflow">
                                         <field name="email"/>
                                     </li>
-                                    <li t-if="record.phone.raw_value" class="o_force_ltr">
-                                        <field name="phone"/>
-                                    </li>
                                 </ul>
                             </div>
-<!--                            <div class="oe_kanban_content o_hr_employee_kanban_bottom position-absolute bottom-0 start-0 end-0 me-2 pe-none">-->
-<!--                                <div class="o_kanban_record_bottom">-->
-<!--                                    <div class="oe_kanban_bottom_left"/>-->
-<!--                                    <div class="oe_kanban_bottom_right float-end pe-auto">-->
-<!--                                        <widget name="hr_employee_chat"/>-->
-<!--                                        <div class="hr_activity_container mb-1 me-n1">-->
-<!--                                            <field name="activity_ids" widget="kanban_activity"/>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <!--                            <div class="oe_kanban_content o_hr_employee_kanban_bottom position-absolute bottom-0 start-0 end-0 me-2 pe-none">-->
+                            <!--                                <div class="o_kanban_record_bottom">-->
+                            <!--                                    <div class="oe_kanban_bottom_left"/>-->
+                            <!--                                    <div class="oe_kanban_bottom_right float-end pe-auto">-->
+                            <!--                                        <widget name="hr_employee_chat"/>-->
+                            <!--                                        <div class="hr_activity_container mb-1 me-n1">-->
+                            <!--                                            <field name="activity_ids" widget="kanban_activity"/>-->
+                            <!--                                        </div>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
                         </div>
                     </t>
                 </templates>

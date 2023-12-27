@@ -3,10 +3,10 @@
     <record id="timekeeping.action_window" model="ir.actions.act_window">
         <field name="name">Timekeeping</field>
         <field name="res_model">human_resource.timekeeping</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Bạn chưa chấm công
+                Bạn chưa có bản ghi chấm công
             </p>
         </field>
     </record>
@@ -17,4 +17,37 @@
 
     <menuitem name="List" id="timekeeping.menu_1_list" parent="timekeeping.menu_1"
               action="timekeeping.action_window"/>
+
+    <record id="timekeeping_list_view" model="ir.ui.view">
+        <field name="name">human_resource.timekeeping.tree</field>
+        <field name="model">human_resource.timekeeping</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách chấm công" editable="top">
+                <field name="staff"/>
+                <field name="checkin_date"/>
+                <field name="checkout_date"/>
+            </tree>
+        </field>
+    </record>
+
+<!--    <record id="timekeeping_human_resource_add_form" model="ir.ui.view">-->
+<!--        <field name="name">human_resource.timekeeping.form</field>-->
+<!--        <field name="model">human_resource.timekeeping</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Add timekeeping" class="form-horizontal" position="bottom">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name="staff"/>-->
+<!--                    </group>-->
+<!--                    <group>-->
+<!--                        <field name="checkin_date"/>-->
+<!--                    </group>-->
+<!--                    <group>-->
+<!--                        <field name="checkout_date"/>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
 </odoo>
