@@ -6,7 +6,7 @@ class Staff(models.Model):
     _name = "human_resource.staff"
     _description = "Staff information"
 
-    name = fields.Char(string="Tên nhân viên")
+    name = fields.Char(string="Tên nhân viên", required=True)
     phone = fields.Char(string="Số điện thoại")
     email = fields.Char(string="Email", required=True)
     address = fields.Char(string="Địa chỉ")
@@ -20,6 +20,15 @@ class Staff(models.Model):
     create_user = fields.Boolean(store=False, default=True, copy=False, string="Technical field, whether to create an user")
 
     department = fields.Many2one('human_resource.department', string="Phòng ban")
+    # department_role = fields.Selection([('manager', 'Trưởng phòng'), ('employee', 'Nhân viên')], compute='_compute_staff_role', string='Chức vụ')
+    #
+    # def _compute_staff_role(self):
+    #     for staff in self:
+    #         for department_staff in staff.department:
+    #             if department_staff.id == staff.department.manager.id:
+    #                 staff.department_role = 'manager'
+    #                 return
+    #         staff.department_role = 'employee'
 
     def action_create_user(self):
         self.ensure_one()

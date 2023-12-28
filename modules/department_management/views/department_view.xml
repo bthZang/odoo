@@ -44,14 +44,22 @@
                         </div>
                         <field name="name" class=""/>
                     </h1>
-                    <div>
-                        <div class="oe_edit_only">
-                            <label for="description"/>
-                        </div>
-                        <textarea class="mb32">
-                            <field name="description" class="mb16"/>
-                        </textarea>
+                    <group>
+                        <field name="total_employee" editable="0" />
+                        <field name="manager" />
+                    </group>
+                    <div class="oe_edit_only">
+                        <label for="description"/>
                     </div>
+                    <textarea>
+                        <field name="description" class="mb16"/>
+                    </textarea>
+<!--                    <field name="staffs" widget="one2many_list">-->
+<!--                        <tree>-->
+<!--                            <field name="name"/>-->
+<!--                            <field name="email"/>-->
+<!--                        </tree>-->
+<!--                    </field>-->
                 </sheet>
             </form>
         </field>
