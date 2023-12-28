@@ -60,8 +60,15 @@
         <field name="model">human_resource.staff</field>
         <field name="arch" type="xml">
             <form string="Add staff">
+                <header>
+                    <field name="create_user" force_save="1" invisible="True"/>
+                    <field name="user_id" invisible="True"/>
+                    <button string="Create user" type="object" name="action_create_user"
+                            attrs="{'invisible': [('user_id', '!=', False)]}"/>
+                </header>
                 <sheet>
                     <group>
+                        <field name="user_id" />
                         <div class="width:100%;">
                             <label for="name"/>
                             <h1 class="mb8">

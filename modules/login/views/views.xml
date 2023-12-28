@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="web.login_layout">
+        <div class="oe_login">
+            <!-- Your custom HTML content goes here -->
+            <h1>Welcome to My Custom Odoo</h1>
+            <form>
+                <!-- Your form fields go here -->
+                <input type="text" name="login" placeholder="Username"/>
+                <input type="password" name="password" placeholder="Password"/>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </t>
+</templates>
