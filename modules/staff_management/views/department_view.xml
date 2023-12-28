@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
 
-    <record id="department_management.action_window" model="ir.actions.act_window">
+    <record id="open_department_list" model="ir.actions.act_window">
         <field name="name">Department management</field>
         <field name="res_model">human_resource.department</field>
         <field name="view_mode">tree,form</field>
@@ -12,12 +12,10 @@
         </field>
     </record>
 
-    <menuitem name="Department" id="department_management.menu_root"/>
+<!--    <menuitem name="Department" id="staff_management.menu_2" parent="staff_management.menu_root"/>-->
 
-    <menuitem name="Home" id="department_management.menu_1" parent="department_management.menu_root"/>
-
-    <menuitem name="List" id="department_management.menu_1_list" parent="department_management.menu_1"
-              action="department_management.action_window"/>
+<!--    <menuitem name="List" id="staff_management.menu_2_list" parent="staff_management.menu_2"-->
+<!--              action="staff_management.action_window"/>-->
 
 
     <record id="department_list_view" model="ir.ui.view">
@@ -46,7 +44,7 @@
                     </h1>
                     <group>
                         <field name="total_employee" editable="0"/>
-<!--                        <field name="manager"/>-->
+                        <field name="manager"/>
                     </group>
                     <group>
                         <field name="description" class="mb16"/>

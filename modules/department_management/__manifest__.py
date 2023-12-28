@@ -6,8 +6,7 @@
     'summary': 'Centralize department information',
     'depends': ['staff_management'],
     'data': [
-        'views/department_view.xml',
-        'security/ir.model.access.csv'
+        # 'security/ir.model.access.csv'
     ],
     'demo': [],
     'installable': True,

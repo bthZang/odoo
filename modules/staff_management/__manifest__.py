@@ -12,7 +12,8 @@
         'views/email.xml',
         'security/ir.model.access.csv',
         'security/category_security.xml',
-        'views/department_view.xml'
+        'views/department_view.xml',
+        'views/index.xml'
     ],
     'demo': [],
     'installable': True,
