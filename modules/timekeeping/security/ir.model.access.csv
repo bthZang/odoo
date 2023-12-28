@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-timekeeping.access_human_resource_timekeeping,access_human_resource_timekeeping,timekeeping.model_human_resource_timekeeping,base.group_user,1,1,1,1
+timekeeping.access_human_resource_timekeeping,access_human_resource_timekeeping,timekeeping.model_human_resource_timekeeping,base.group_erp_manager,1,1,1,1
+timekeeping.access_human_resource_timekeeping_group,access_human_resource_timekeeping_security,timekeeping.model_human_resource_timekeeping,staff_management.hr_triple_c_group,1,1,1,1

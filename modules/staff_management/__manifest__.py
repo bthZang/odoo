@@ -8,7 +8,9 @@
     ],
     'data': [
         'views/staff_view.xml',
-        'security/ir.model.access.csv'
+        'views/email.xml',
+        'security/ir.model.access.csv',
+        'security/category_security.xml'
     ],
     'demo': [],
     'installable': True,

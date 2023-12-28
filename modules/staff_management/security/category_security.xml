@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_category_triple_c">
+            <field name="name">TripleC</field>
+            <field name="description">Danh mục TripleC</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="customer_service_triple_c_group" model="res.groups">
+            <field name="name">CSKH</field>
+            <field name="comment">Nhân viên chăm sóc khách hàng</field>
+            <field name="category_id" ref="module_category_triple_c"/>
+        </record>
+        <record id="hr_triple_c_group" model="res.groups">
+            <field name="name">Quản lý nhân sự</field>
+            <field name="comment">Nhân viên quản lý nhân sự</field>
+            <field name="category_id" ref="module_category_triple_c"/>
+        </record>
+        <!--    <record model="ir.module.category" id="module_category_hr_staff">-->
+        <!--        <field name="name">Nhân viên nhân sự</field>-->
+        <!--        <field name="description">Nhân viên phụ trách quản lý nhân sự</field>-->
+        <!--        <field name="sequence">1</field>-->
+        <!--    </record>-->
+        <!--    <record model="ir.module.category" id="module_category_customer_service_staff">-->
+        <!--        <field name="name">Nhân viên chăm sóc khách hàng</field>-->
+        <!--        <field name="description">Nhân viên phụ trách chăm sóc khách hàng</field>-->
+        <!--        <field name="sequence">1</field>-->
+        <!--    </record>-->
+        <!--    <record model="ir.module.category" id="module_category_normal_staff">-->
+        <!--        <field name="name">Nhân viên</field>-->
+        <!--        <field name="description">Nhân viên thông thường</field>-->
+        <!--        <field name="sequence">1</field>-->
+        <!--    </record>-->
+    </data>
+</odoo>

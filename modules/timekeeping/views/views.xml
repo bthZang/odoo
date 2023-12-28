@@ -26,6 +26,7 @@
                 <field name="staff"/>
                 <field name="checkin_date"/>
                 <field name="checkout_date"/>
+                <field name="create_uid"/>
             </tree>
         </field>
     </record>

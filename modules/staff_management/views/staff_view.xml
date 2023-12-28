@@ -45,6 +45,7 @@
         <field name="model">human_resource.staff</field>
         <field name="arch" type="xml">
             <tree string="Danh sách nhân viên">
+
                 <field name="name"/>
                 <field name="phone"/>
                 <field name="email"/>
@@ -68,7 +69,6 @@
                 </header>
                 <sheet>
                     <group>
-                        <field name="user_id" />
                         <div class="width:100%;">
                             <label for="name"/>
                             <h1 class="mb8">
@@ -175,4 +175,23 @@
         <field name="view_mode">kanban</field>
         <field name="view_id" ref="view_staff_list_kanban"/>
     </record>
+
+    <record id="action_send_email_to_selected_employees" model="ir.actions.server">
+        <field name="name">Send email</field>
+        <field name="model_id" ref="model_human_resource_staff"/>
+        <field name="binding_model_id" ref="model_human_resource_staff"/>
+        <field name="state">code</field>
+        <field name="code">
+            records.send_email_to_selected_employees()
+        </field>
+    </record>
+
+<!--    <record id="action_send_password_reset_instructions" model="ir.actions.server">-->
+<!--        <field name="name">Send Password Reset Instructions</field>-->
+<!--        <field name="model_id" ref="base.model_res_users"/>-->
+<!--        <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/>-->
+<!--        <field name="binding_model_id" ref="base.model_res_users"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">records.action_reset_password()</field>-->
+<!--    </record>-->
 </odoo>
