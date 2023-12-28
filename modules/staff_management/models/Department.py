@@ -8,9 +8,9 @@ class Department(models.Model):
     name = fields.Char(string="Tên phòng ban")
     description = fields.Char(string="Mô tả")
 
-    manager = fields.Many2one('human_resource.staff', string="Trưởng phòng")
+    # manager = fields.Many2one('human_resource.staff', string="Trưởng phòng")
 
-    staffs = fields.One2many('human_resource.staff', string="Danh sách nhân viên")
+    staffs = fields.One2many('human_resource.staff', string="Danh sách nhân viên", inverse_name="department")
 
     total_employee = fields.Integer(compute='_compute_total_staff', string='Total Employee')
 

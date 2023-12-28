@@ -5,12 +5,14 @@
     'sequence': 2,
     'summary': 'Centralize employee information',
     'depends': [
+        # 'department_management'
     ],
     'data': [
         'views/staff_view.xml',
         'views/email.xml',
         'security/ir.model.access.csv',
-        'security/category_security.xml'
+        'security/category_security.xml',
+        'views/department_view.xml'
     ],
     'demo': [],
     'installable': True,

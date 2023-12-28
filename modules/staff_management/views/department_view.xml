@@ -45,21 +45,19 @@
                         <field name="name" class=""/>
                     </h1>
                     <group>
-                        <field name="total_employee" editable="0" />
-                        <field name="manager" />
+                        <field name="total_employee" editable="0"/>
+<!--                        <field name="manager"/>-->
                     </group>
-                    <div class="oe_edit_only">
-                        <label for="description"/>
-                    </div>
-                    <textarea>
+                    <group>
                         <field name="description" class="mb16"/>
-                    </textarea>
-<!--                    <field name="staffs" widget="one2many_list">-->
-<!--                        <tree>-->
-<!--                            <field name="name"/>-->
-<!--                            <field name="email"/>-->
-<!--                        </tree>-->
-<!--                    </field>-->
+                    </group>
+                    <field name="staffs" widget="one2many_list">
+                        <tree>
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="department_role"/>
+                        </tree>
+                    </field>
                 </sheet>
             </form>
         </field>

@@ -1,1 +1,1 @@
-from . import Staff
+from . import Staff, Department

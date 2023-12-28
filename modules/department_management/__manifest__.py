@@ -4,7 +4,7 @@
     'category': 'Human Resource/Department Management',
     'sequence': 1,
     'summary': 'Centralize department information',
-    'depends': [],
+    'depends': ['staff_management'],
     'data': [
         'views/department_view.xml',
         'security/ir.model.access.csv'
