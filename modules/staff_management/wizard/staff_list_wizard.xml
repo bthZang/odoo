@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record id="select_staff_wizard" model="ir.ui.view">
+            <field name="name">select staff wizard</field>
+            <field name="model">human_resource.staff.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="staff"/>
+                        </group>
+                        <footer>
+                            <button name="action_add_staff_to_department" type="object" string="Add to department"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="select_staff_wizard_action" model="ir.actions.act_window">
+            <field name="name">Select staffs</field>
+            <field name="res_model">human_resource.staff.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

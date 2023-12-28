@@ -12,12 +12,6 @@
         </field>
     </record>
 
-<!--    <menuitem name="Department" id="staff_management.menu_2" parent="staff_management.menu_root"/>-->
-
-<!--    <menuitem name="List" id="staff_management.menu_2_list" parent="staff_management.menu_2"-->
-<!--              action="staff_management.action_window"/>-->
-
-
     <record id="department_list_view" model="ir.ui.view">
         <field name="name">human_resource.department.tree</field>
         <field name="model">human_resource.department</field>
@@ -49,8 +43,9 @@
                     <group>
                         <field name="description" class="mb16"/>
                     </group>
-                    <field name="staffs" widget="one2many_list">
-                        <tree>
+                    <button string="Add staff" name="%(select_staff_wizard_action)d" type="action" context="{'department_id': id}" />
+                    <field name="staffs" widget="Radio">
+                        <tree editable="top">
                             <field name="name"/>
                             <field name="email"/>
                             <field name="department_role"/>
