@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
     <record id="open_applicant_list" model="ir.actions.act_window">
-        <field name="name">Quản lý nhân sự</field>
+        <field name="name">Quản lý ứng viên</field>
         <field name="res_model">human_resource.applicant</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
