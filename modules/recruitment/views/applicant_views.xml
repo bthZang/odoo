@@ -27,7 +27,7 @@
         <field name="name">human_resource.applicant.tree</field>
         <field name="model">human_resource.applicant</field>
         <field name="arch" type="xml">
-            <tree string="Danh sách nhân viên">
+            <tree string="Danh sách ứng viên">
                 <field name="name"/>
                 <field name="birth"/>
                 <field name="phone"/>

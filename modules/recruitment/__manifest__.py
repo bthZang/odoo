@@ -11,10 +11,11 @@
         Long description of module's purpose
     """,
     'version': '0.1',
-    'depends': ['base'],
+    'depends': ['base', 'staff_management'],
     'data': [
         'security/ir.model.access.csv',
         'views/applicant_views.xml',
+        'views/interview_appointment_views.xml',
         'views/views.xml',
     ],
     'js': ['static/src/js/widgets.js'],

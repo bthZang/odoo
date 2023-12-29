@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="open_interview_appointment_list" model="ir.actions.act_window">
+        <field name="name">Quản lý lịch hẹn</field>
+        <field name="res_model">human_resource.interview_appointment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Define a new interview appointment
+            </p>
+        </field>
+    </record>
+
+    <record id="interview_appointment_list_view" model="ir.ui.view">
+        <field name="name">human_resource.interview_appointment.tree</field>
+        <field name="model">human_resource.interview_appointment</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách lịch hẹn">
+                <field name="time"/>
+                <field name="location"/>
+                <field name="applicant"/>
+                <field name="staffs"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="interview_appointment_human_resource_add_form" model="ir.ui.view">
+        <field name="name">human_resource.interview_appointment.form</field>
+        <field name="model">human_resource.interview_appointment</field>
+        <field name="arch" type="xml">
+            <form string="Add appointment">
+                <sheet>
+                    <h1>Thêm một lịch hẹn phỏng vấn</h1>
+                    <group string="Thông tin cơ bản">
+                        <group>
+                            <field name="time" placeholder="Nhập thời gian phỏng vấn"/>
+                        </group>
+                        <group>
+                            <field name="location" placeholder="Nhập địa điểm phỏng vấn"/>
+                        </group>
+                    </group>
+                    <group string="Thông tin chi tiết">
+                        <field name="applicant" style="width:fit-content;" placeholder="Chọn ứng viên"/>
+                        <field name="staffs">
+                            <tree>
+                                <field name="name" />
+                                <field name="email" />
+                                <field name="role" />
+                                <field name="department" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
