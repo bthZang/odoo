@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class Applicant(models.Model):
     _name = "human_resource.applicant"
     _description = "Applicant information"
@@ -24,4 +25,3 @@ class Applicant(models.Model):
 
     def reject_applicant(self):
         pass
-

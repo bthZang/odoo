@@ -15,7 +15,13 @@
     <menuitem
             id="menu_interview_result"
             name="Phỏng vấn"
-            action="open_interview_appointment_list"
             parent="menu_recruitment_root"
             sequence="2"/>
+
+    <menuitem
+            id="menu_interview_list"
+            name="Lịch hẹn phỏng vấn"
+            action="open_interview_appointment_list"
+            parent="menu_interview_result"
+            sequence="1"/>
 </odoo>

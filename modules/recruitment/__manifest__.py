@@ -14,6 +14,7 @@
     'depends': ['base', 'staff_management'],
     'data': [
         'security/ir.model.access.csv',
+        'wizards/interview_result_wizard.xml',
         'views/applicant_views.xml',
         'views/interview_appointment_views.xml',
         'views/views.xml',

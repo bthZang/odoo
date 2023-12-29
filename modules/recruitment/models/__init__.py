@@ -1,1 +1,1 @@
-from . import Applicant, InterviewResult, InterviewAppointment, AppointmentStaff
+from . import Applicant, InterviewAppointment, AppointmentStaff, InterviewResult
