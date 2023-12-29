@@ -16,6 +16,7 @@
         'views/department_view.xml',
         'views/index.xml',
     ],
+    'js': ['static/src/js/widgets.js'],
     'demo': [],
     'installable': True,
     'application': True,

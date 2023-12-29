@@ -16,6 +16,10 @@ class Staff(models.Model):
                             string="Loại nhân viên")
     image = fields.Char(String="Ảnh")
 
+    labor_contract_start_date = fields.Date(string='Ngày bắt đầu hợp đồng')
+    labor_contract_end_date = fields.Date(string='Ngày hết hạn hợp đồng')
+    labor_contract_image = fields.Binary(string='File', attachment=True)
+
     user_id = fields.Many2one('res.users', 'User', store=True, readonly=False)
     create_user = fields.Boolean(store=False, default=True, copy=False, string="Technical field, whether to create an user")
 

@@ -89,7 +89,16 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Phân quyền">
+                        <page string="Hợp đồng lao động">
+                            <group>
+                                <group>
+                                    <field name="labor_contract_start_date"/>
+                                    <field name="labor_contract_end_date"/>
+                                </group>
+                                <group>
+                                    <field name="labor_contract_image" widget="pdf_viewer"/>
+                                </group>
+                            </group>
                         </page>
                         <page string="Phòng ban">
                             <group>
