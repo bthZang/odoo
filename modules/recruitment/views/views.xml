@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem
+            id="menu_recruitment_root"
+            name="Tuyển dụng"
+            sequence="2"/>
+
+    <menuitem
+            id="menu_applicant_list"
+            name="Ứng viên"
+            action="open_applicant_list"
+            parent="menu_recruitment_root"
+            sequence="1"/>
+
+<!--    <menuitem-->
+<!--            id="menu_interview_result"-->
+<!--            name="Kết quả phỏng vấn"-->
+<!--            action="open_interview_result_list"-->
+<!--            parent="menu_recruitment_root"-->
+<!--            sequence="2"/>-->
+</odoo>

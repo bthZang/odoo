@@ -14,7 +14,7 @@ class Staff(models.Model):
     role = fields.Selection([('admin', 'Quản lý'), ('hr_staff', 'Nhân viên quản lý nhân sự'),
                              ('customer_service_staff', 'Nhân viên chăm sóc khách hàng'), ('staff', 'Nhân viên')],
                             string="Loại nhân viên")
-    image = fields.Char(String="Ảnh")
+    image = fields.Char(string="Ảnh")
 
     labor_contract_start_date = fields.Date(string='Ngày bắt đầu hợp đồng')
     labor_contract_end_date = fields.Date(string='Ngày hết hạn hợp đồng')
