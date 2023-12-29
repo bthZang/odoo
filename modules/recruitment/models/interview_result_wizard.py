@@ -1,9 +1,11 @@
 from odoo import models, fields, _, api
 from odoo.exceptions import ValidationError
 
+from datetime import datetime
+
 
 class InterviewResult(models.TransientModel):
-    _name = "human_resource.interview_result_wizard"
+    _name = "human_resource.interview_result.wizard"
     _description = "Interview result wizard"
 
     score = fields.Float(string="Điểm")
@@ -13,13 +15,25 @@ class InterviewResult(models.TransientModel):
         appointment_id = self.env.context.get('appointment_id')
         user_id = self.env.user.id
 
-        staff_id = self.env['human_resource.staff'].search([('user_id', '=', user_id)])
+        staff_id = self.env['human_resource.staff'].search([('user_id', '=', user_id)]).id
+
+        print("appointment_id: ", appointment_id)
 
         for record in self:
-            appointment_staff = self.env['human_resource_appointment_staff'].search([('appointment', '=', appointment_id)])
-
-            appointment_staff.write({
-                'score': record.score,
-                'comment': record.comment,
-                'staff': staff_id
-            })
+            result = self.env['human_resource.interview_result'].search(
+                [('appointment', '!=', False), ('appointment.id', '=', appointment_id),
+                 ('staff.id', '=', staff_id)], limit=1)
+            if result is not None:
+                print("Result existed")
+                result.write({
+                    'score': record.score,
+                    'comment': record.comment
+                })
+            else:
+                print("Result not existed")
+                self.env['human_resource.interview_result'].create(dict({
+                    'score': record.score,
+                    'comment': record.comment,
+                    'staff': staff_id,
+                    'appointment': appointment_id
+                }))

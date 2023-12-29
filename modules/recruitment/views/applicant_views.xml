@@ -89,6 +89,7 @@
                                 <tree>
                                     <field name="time"/>
                                     <field name="location"/>
+<!--                                    <field name="state" widget="statusbar"/>-->
                                     <field name="state"/>
                                     <field name="staffs" widget="many2many_tags" options="{'no_create': True}"/>
                                 </tree>

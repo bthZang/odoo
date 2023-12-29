@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="view_interview_result_wizard" model="ir.ui.view">
+            <field name="name">Add interview result</field>
+            <field name="model">human_resource.interview_result_list_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div style="width: 100%;">
+                            <field name="results" nolabel="1" readonly="1">
+                                <tree>
+                                    <field name="staff" />
+                                    <field name="score" />
+                                    <field name="comment" />
+                                </tree>
+                            </field>
+                        </div>
+                        <footer>
+                            <button name="send_result_to_applicant" type="object" string="Send results to applicant"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_interview_result" model="ir.actions.act_window">
+            <field name="name">Add interview result</field>
+            <field name="res_model">human_resource.interview_result_list_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

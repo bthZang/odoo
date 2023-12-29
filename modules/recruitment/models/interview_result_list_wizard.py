@@ -1,24 +1,22 @@
 from odoo import models, fields, _, api
-from odoo.exceptions import ValidationError
 
 
 class InterviewResultList(models.TransientModel):
     _name = "human_resource.interview_result_list_wizard"
     _description = "Interview result list wizard"
 
+    results = fields.Many2many('human_resource.interview_result', 'interview_result_relation', string="Danh sách")
 
+    @api.model
+    def default_get(self, fields):
+        defaults = super(InterviewResultList, self).default_get(fields)
 
-    def action_add_result(self):
         appointment_id = self.env.context.get('appointment_id')
-        user_id = self.env.user.id
+        appointment_staff = self.env['human_resource.interview_result'].search([('appointment.id', '=', appointment_id)])
 
-        staff_id = self.env['human_resource.staff'].search([('user_id', '=', user_id)])
+        defaults['results'] = appointment_staff
 
-        for record in self:
-            appointment_staff = self.env['human_resource_appointment_staff'].search([('appointment', '=', appointment_id)])
+        return defaults
 
-            appointment_staff.write({
-                'score': record.score,
-                'comment': record.comment,
-                'staff': staff_id
-            })
+    def send_result_to_applicant(self):
+        print("Send mail")

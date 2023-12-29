@@ -1,8 +1,8 @@
 <odoo>
     <data>
         <record id="add_interview_result_wizard" model="ir.ui.view">
-            <field name="name">Add interview result</field>
-            <field name="model">human_resource.interview_result_wizard</field>
+            <field name="name">add interview result wizard</field>
+            <field name="model">human_resource.interview_result.wizard</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -11,7 +11,7 @@
                             <field name="comment" placeholder="Nhập nhận xét"/>
                         </group>
                         <footer>
-                            <button name="action_add_result" type="object" string="Add result"/>
+                            <button name="action_add_result" type="object" string="Added result"/>
                         </footer>
                     </sheet>
                 </form>
@@ -20,7 +20,7 @@
 
         <record id="add_interview_result" model="ir.actions.act_window">
             <field name="name">Add interview result</field>
-            <field name="res_model">human_resource.interview_result_wizard</field>
+            <field name="res_model">human_resource.interview_result.wizard</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
         </record>

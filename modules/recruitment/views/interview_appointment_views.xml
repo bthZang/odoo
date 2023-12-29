@@ -33,11 +33,17 @@
                     <header class="mb16">
                         <button string="Add interview result" name="%(add_interview_result)d" type="action"
                                 context="{'appointment_id': id}"/>
+                        <button string="View result" name="%(view_interview_result)d" type="action"
+                                context="{'appointment_id': id}"/>
                     </header>
                     <h1>
                         <field name="applicant" style="width:fit-content;" placeholder="Chọn ứng viên"/>
                     </h1>
                     <group string="Thông tin cơ bản">
+                        <group>
+                            <field name="state" placeholder="Trạng thái"/>
+                        </group>
+                        <div></div>
                         <group>
                             <field name="time" placeholder="Nhập thời gian phỏng vấn"/>
                         </group>
