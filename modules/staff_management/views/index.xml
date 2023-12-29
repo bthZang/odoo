@@ -1,38 +1,21 @@
 <?xml version="1.0"?>
 <odoo>
-
-    <!--    <menuitem name="Staff" id="staff_management.menu_root"/>-->
-
-    <!--    <menuitem name="Staff" id="staff_management.menu_1" parent="staff_management.menu_root"/>-->
-
-    <!--    <menuitem name="List" id="staff_management.menu_1_list" parent="staff_management.menu_1"-->
-    <!--              action="staff_management.staff.action_window"/>-->
-
-    <!--    <menuitem name="Department" id="staff_management.menu_2" parent="staff_management.menu_root"/>-->
-
-    <!--    <menuitem name="List" id="staff_management.menu_2_list" parent="staff_management.menu_2"-->
-    <!--              action="staff_management.department.action_window"/>-->
-
     <menuitem
             id="menu_staff_management_root"
-            name="Staff"
+            name="Nhân sự"
             sequence="1"/>
 
     <menuitem
             id="menu_staff_management_staff"
-            name="Staff"
+            name="Nhân sự"
             action="open_staff_list"
             parent="menu_staff_management_root"
             sequence="1"/>
 
     <menuitem
             id="menu_staff_management_department"
-            name="Department"
+            name="Phòng ban"
             action="open_department_list"
             parent="menu_staff_management_root"
             sequence="2"/>
-
-    <!--            groups="group_hr_manager,group_hr_user,base.group_user"-->
-    <!--    web_icon="hr,static/description/icon.svg"-->
-
 </odoo>

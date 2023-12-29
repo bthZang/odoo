@@ -2,7 +2,7 @@
 <odoo>
 
     <record id="open_department_list" model="ir.actions.act_window">
-        <field name="name">Department management</field>
+        <field name="name">Quản lý phòng ban</field>
         <field name="res_model">human_resource.department</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
@@ -18,8 +18,9 @@
         <field name="arch" type="xml">
             <tree string="Danh sách phòng ban">
                 <field name="name"/>
-                <field name="description"/>
+                <field name="manager"/>
                 <field name="total_employee"/>
+                <field name="description"/>
             </tree>
         </field>
     </record>
@@ -37,13 +38,18 @@
                         <field name="name" class=""/>
                     </h1>
                     <group>
-                        <field name="total_employee" editable="0"/>
-                        <field name="manager"/>
+                        <group>
+                            <field name="total_employee" editable="0"/>
+                        </group>
+                        <group>
+                            <field name="manager"/>
+                        </group>
                     </group>
                     <group>
-                        <field name="description" class="mb16"/>
+                        <field name="description" class="mb32"/>
                     </group>
-                    <button string="Add staff" name="%(select_staff_wizard_action)d" type="action" context="{'department_id': id}" />
+                    <button string="Add staff" name="%(select_staff_wizard_action)d" class="mb16" type="action"
+                            context="{'department_id': id}"/>
                     <field name="staffs" widget="Radio">
                         <tree editable="top">
                             <field name="name"/>

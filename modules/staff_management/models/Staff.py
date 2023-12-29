@@ -55,8 +55,6 @@ class Staff(models.Model):
                         'recipient_ids': [], 'partner_ids': [], 'scheduled_date': False, 'email_to': self.email}
 
         mail_id = template.send_mail(self.user_id.id, force_send=True, raise_exception=True, email_values=email_values)
-        print(f"Mail id: {mail_id}")
-        print(email_values)
 
     @api.onchange('role')
     def onchange(self, values, field_name, field_onchange):
