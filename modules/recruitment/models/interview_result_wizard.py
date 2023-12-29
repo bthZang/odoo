@@ -17,8 +17,6 @@ class InterviewResult(models.TransientModel):
 
         staff_id = self.env['human_resource.staff'].search([('user_id', '=', user_id)]).id
 
-        print("appointment_id: ", appointment_id)
-
         for record in self:
             result = self.env['human_resource.interview_result'].search(
                 [('appointment', '!=', False), ('appointment.id', '=', appointment_id),
