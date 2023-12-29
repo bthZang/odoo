@@ -84,6 +84,15 @@
                             </group>
                         </page>
                         <page string="Phỏng vấn">
+                            <h3 class="mb16">Danh sách phỏng vấn</h3>
+                            <field name="interviews">
+                                <tree>
+                                    <field name="time"/>
+                                    <field name="location"/>
+                                    <field name="state"/>
+                                    <field name="staffs" widget="many2many_tags" options="{'no_create': True}"/>
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
@@ -138,13 +147,13 @@
         <field name="view_id" ref="view_applicant_list_kanban"/>
     </record>
 
-<!--    <record id="action_send_email_to_selected_employees" model="ir.actions.server">-->
-<!--        <field name="name">Send email</field>-->
-<!--        <field name="model_id" ref="model_human_resource_applicant"/>-->
-<!--        <field name="binding_model_id" ref="model_human_resource_applicant"/>-->
-<!--        <field name="state">code</field>-->
-<!--        <field name="code">-->
-<!--            records.send_email_to_selected_employees()-->
-<!--        </field>-->
-<!--    </record>-->
+    <!--    <record id="action_send_email_to_selected_employees" model="ir.actions.server">-->
+    <!--        <field name="name">Send email</field>-->
+    <!--        <field name="model_id" ref="model_human_resource_applicant"/>-->
+    <!--        <field name="binding_model_id" ref="model_human_resource_applicant"/>-->
+    <!--        <field name="state">code</field>-->
+    <!--        <field name="code">-->
+    <!--            records.send_email_to_selected_employees()-->
+    <!--        </field>-->
+    <!--    </record>-->
 </odoo>

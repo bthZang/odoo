@@ -7,8 +7,8 @@
                 <form>
                     <sheet>
                         <group>
-                            <field name="score"/>
-                            <field name="comment"/>
+                            <field name="score" style="width:fit-content;" type="float" placeholder="Nhập điểm đánh giá"/>
+                            <field name="comment" placeholder="Nhập nhận xét"/>
                         </group>
                         <footer>
                             <button name="action_add_result" type="object" string="Add result"/>

@@ -28,9 +28,15 @@
         <field name="name">human_resource.interview_appointment.form</field>
         <field name="model">human_resource.interview_appointment</field>
         <field name="arch" type="xml">
-            <form string="Add appointment">
+            <form string="Thêm lịch hẹn">
                 <sheet>
-                    <h1>Thêm một lịch hẹn phỏng vấn</h1>
+                    <header class="mb16">
+                        <button string="Add interview result" name="%(add_interview_result)d" type="action"
+                                context="{'appointment_id': id}"/>
+                    </header>
+                    <h1>
+                        <field name="applicant" style="width:fit-content;" placeholder="Chọn ứng viên"/>
+                    </h1>
                     <group string="Thông tin cơ bản">
                         <group>
                             <field name="time" placeholder="Nhập thời gian phỏng vấn"/>
@@ -40,13 +46,12 @@
                         </group>
                     </group>
                     <group string="Thông tin chi tiết">
-                        <field name="applicant" style="width:fit-content;" placeholder="Chọn ứng viên"/>
                         <field name="staffs">
                             <tree>
-                                <field name="name" />
-                                <field name="email" />
-                                <field name="role" />
-                                <field name="department" />
+                                <field name="name"/>
+                                <field name="email"/>
+                                <field name="role"/>
+                                <field name="department"/>
                             </tree>
                         </field>
                     </group>

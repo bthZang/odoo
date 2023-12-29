@@ -2,7 +2,7 @@ from odoo import models, fields, _, api
 from odoo.exceptions import ValidationError
 
 
-class Staff(models.Model):
+class Staff(models.TransientModel):
     _name = "human_resource.staff.wizard"
     _description = "Staff list wizard"
 

@@ -16,8 +16,9 @@ class Applicant(models.Model):
     cv = fields.Binary(string='File', attachment=True)
     portfolio = fields.Binary(string='File', attachment=True)
 
-    state = fields.Selection([('pending', 'Chờ xử lý'), ('approved', 'Chấp nhận'), ('rejected', 'Bị từ chối')])
-    reason = fields.Char(string="Lý do")
+    state = fields.Selection([('pending', 'Chờ xử lý'), ('approved', 'Chấp nhận'), ('rejected', 'Bị từ chối')], default='pending')
+
+    interviews = fields.One2many('human_resource.interview_appointment', string='Danh sách phỏng vấn', inverse_name='applicant')
 
     def approve_applicant(self):
         for applicant in self:

@@ -1,1 +1,1 @@
-from . import Staff, Department
+from . import Staff, Department, staff_list_wizard

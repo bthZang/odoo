@@ -10,3 +10,4 @@ class AppointmentStaff(models.Model):
 
     score = fields.Float(string="Điểm")
     comment = fields.Char(string="Nhận xét")
+

@@ -13,6 +13,8 @@ class InterviewAppointment(models.Model):
     applicant = fields.Many2one('human_resource.applicant', string="Ứng viên")
     location = fields.Char(string="Địa điểm")
 
+    state = fields.Selection([('pending', 'Chờ xử lý'), ('approved', 'Chấp nhận'), ('rejected', 'Bị từ chối')], default='pending')
+
     def unlink(self):
         for appointment in self:
             relation = self.env['human_resource.interview_appointment'].browse(appointment.id)
