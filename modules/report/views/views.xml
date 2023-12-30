@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem
+            id="menu_report_root"
+            name="Báo cáo"
+            sequence="1"/>
+
+    <menuitem
+            id="menu_report_request_list"
+            name="Yêu cầu của bạn"
+            action="open_report_request_list"
+            parent="menu_report_root"
+            sequence="1"/>
+
+    <menuitem
+            id="menu_report_request_my_list"
+            name="Báo cáo cần làm"
+            action="open_report_request_my_list"
+            parent="menu_report_root"
+            sequence="2"/>
+</odoo>
