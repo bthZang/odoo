@@ -29,7 +29,7 @@
         <field name="arch" type="xml">
             <form string="Thêm liên lạc">
                 <div>
-                    <header class="mb16">
+                    <header class="mb16 oe_button_box">
                         <button string="Reply" name="%(reply_contact)d" type="action"
                                 context="{'contact_id': id}"/>
                     </header>
