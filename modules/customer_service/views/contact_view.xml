@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="open_contact_list" model="ir.actions.act_window">
+        <field name="name">Danh sách liên lạc</field>
+        <field name="res_model">customer_service.contact</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Không có liên lạc nào
+            </p>
+        </field>
+    </record>
+
+    <record id="contact_list_view" model="ir.ui.view">
+        <field name="name">customer_service.contact.tree</field>
+        <field name="model">customer_service.contact</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách liên lạc">
+                <field name="title"/>
+                <field name="email"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="contact_human_resource_add_form" model="ir.ui.view">
+        <field name="name">customer_service.contact.form</field>
+        <field name="model">customer_service.contact</field>
+        <field name="arch" type="xml">
+            <form string="Thêm liên lạc">
+                <div>
+                    <header class="mb16">
+                        <button string="Reply" name="%(reply_contact)d" type="action"
+                                context="{'contact_id': id}"/>
+                    </header>
+                    <div style="display: flex">
+                        <sheet>
+                            <div class="width:100%;">
+                                <label for="title"/>
+                                <h1 class="mb8">
+                                    <field name="title" placeholder="Nhập tiêu đề"/>
+                                </h1>
+                            </div>
+                            <group string="Thông tin cơ bản">
+                                <group>
+                                    <field name="email" placeholder="Nhập địa chỉ email"/>
+                                </group>
+                                <div/>
+                            </group>
+                            <label for="content"/>
+                            <field name="content" placeholder="Nhập nội dung email"/>
+                        </sheet>
+                        <sheet style="width: 50%">
+                            <field name="responses">
+                                <tree>
+                                    <field name="write_uid" string="Nhân viên trả lời"/>
+                                    <field name="title"/>
+                                    <field name="content"/>
+                                </tree>
+                            </field>
+                        </sheet>
+                    </div>
+                </div>
+
+            </form>
+        </field>
+    </record>
+</odoo>

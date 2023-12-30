@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record id="reply_contact_wizard" model="ir.ui.view">
+            <field name="name">Trả lời khách hàng</field>
+            <field name="model">customer_service.reply</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="title" placeholder="Nhập tiêu đề"/>
+                            <field name="content" placeholder="Nhập nội dung"/>
+                        </group>
+                        <footer>
+                            <button name="reply_contact" type="object" string="Send reply"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="reply_contact" model="ir.actions.act_window">
+            <field name="name">Trả lời khách hàng</field>
+            <field name="res_model">customer_service.reply</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

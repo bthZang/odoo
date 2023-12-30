@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem
+            id="menu_customer_root"
+            name="Khách hàng"
+            sequence="3"/>
+
+    <menuitem
+            id="menu_applicant_list"
+            name="Khách hàng"
+            action="open_customer_list"
+            parent="menu_customer_root"
+            sequence="1"/>
+
+    <menuitem
+            id="menu_contact_result"
+            name="Liên lạc"
+            action="open_contact_list"
+            parent="menu_customer_root"
+            sequence="2"/>
+</odoo>

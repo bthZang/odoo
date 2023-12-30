@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="open_customer_list" model="ir.actions.act_window">
+        <field name="name">Quản lý khách hàng</field>
+        <field name="res_model">customer_service.customer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Bạn chưa tạo khách hàng nào
+            </p>
+        </field>
+    </record>
+
+    <record id="customer_list_view" model="ir.ui.view">
+        <field name="name">customer_service.customer.tree</field>
+        <field name="model">customer_service.customer</field>
+        <field name="arch" type="xml">
+            <tree string="Danh sách khách hàng">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="potentialPoint"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="customer_human_resource_add_form" model="ir.ui.view">
+        <field name="name">customer_service.customer.form</field>
+        <field name="model">customer_service.customer</field>
+        <field name="arch" type="xml">
+            <form string="Thêm khách hàng">
+                <sheet>
+                    <div class="width:100%;">
+                        <label for="name"/>
+                        <h1 class="mb8">
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group string="Thông tin cơ bản">
+                        <group>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="phone"/>
+                        </group>
+                        <group>
+                            <field name="address"/>
+                        </group>
+                        <group>
+                            <field name="potentialPoint"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
