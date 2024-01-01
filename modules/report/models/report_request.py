@@ -8,7 +8,8 @@ class ReportRequest(models.Model):
 
     deadline = fields.Datetime(string="Hạn nộp")
     state = fields.Selection(
-        [('created', 'Đang chờ phản hồi từ người thực hiện'), ('in_progress', 'Đang xử lý'), ('done', 'Hoàn thành'), ('rejected', 'Bị từ chối')],
+        [('created', 'Đang chờ phản hồi từ người thực hiện'), ('in_progress', 'Đang xử lý'), ('done', 'Hoàn thành'),
+         ('rejected', 'Bị từ chối')],
         string="Trạng thái", default="created")
 
     title = fields.Char(string="Tiêu đề")
@@ -17,3 +18,13 @@ class ReportRequest(models.Model):
     report = fields.One2many('report.report', string="Báo cáo", inverse_name="request")
     assignee = fields.Many2one('human_resource.staff', string="Người thực hiện")
     department = fields.Many2one('human_resource.department', string="Phòng ban thực hiện")
+
+    user_id = fields.Many2one(related='assignee.user_id')
+
+    def accept(self):
+        for request in self:
+            request.state = 'in_progress'
+
+    def reject(self):
+        for request in self:
+            request.state = 'rejected'

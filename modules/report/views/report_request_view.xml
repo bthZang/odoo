@@ -3,7 +3,7 @@
     <record id="open_report_request_list" model="ir.actions.act_window">
         <field name="name">Danh sách báo cáo bạn đã yêu cầu</field>
         <field name="res_model">report.report_request</field>
-        <field name="domain">[('write_uid', '=', uid)]</field>
+        <field name="domain">[('create_uid', '=', uid)]</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -30,15 +30,25 @@
         <field name="model">report.report_request</field>
         <field name="arch" type="xml">
             <form string="Tạo một yêu cầu báo cáo">
-                <div>
-                    <div style="display: flex">
-                        <sheet>
+                <div style="width: 100%;">
+                    <field name="state" invisible="1" />
+                    <field name="assignee" invisible="1" />
+                    <field name="user_id" invisible="1" />
+                    <header attrs="{'invisible': [('user_id', '=', 'uid')]}">
+                        <button name="accept" string="Đồng ý thực hiện" type="object"/>
+                        <button name="reject" string="Từ chối thực hiện" type="object"/>
+                    </header>
+                    <div style="display: flex; height: 100%;">
+                        <sheet style="width: 40%">
                             <div class="width:100%;">
                                 <label for="title"/>
                                 <h1 class="mb8">
                                     <field name="title" placeholder="Nhập tiêu đề"/>
                                 </h1>
                             </div>
+                            <group>
+                                <field name="deadline" placeholder="Chọn hạn nộp"/>
+                            </group>
                             <group>
                                 <field name="assignee" placeholder="Chọn nhân viên phụ trách"/>
                             </group>
@@ -48,7 +58,8 @@
                             <label for="description"/>
                             <field name="description" placeholder="Nhập mô tả cho yêu cầu"/>
                         </sheet>
-                        <sheet style="width: 50%">
+                        <sheet style="width: 60%"
+                               attrs="{'invisible': ['|', ('state', '=', 'created'), ('state', '=', 'rejected')]}">
                             <field name="report">
                                 <tree>
                                     <field name="write_uid" string="Nhân viên"/>

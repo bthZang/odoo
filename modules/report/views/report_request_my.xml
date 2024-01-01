@@ -3,7 +3,7 @@
     <record id="open_report_request_my_list" model="ir.actions.act_window">
         <field name="name">Danh sách báo cáo cần thực hiện</field>
         <field name="res_model">report.report_request</field>
-        <field name="domain">[('assignee.user_id', '=', uid), ('assignee.user_id', '=', uid)]</field>
+        <field name="domain">[('assignee.user_id', '=', uid)]</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -25,43 +25,44 @@
         </field>
     </record>
 
-    <record id="report_request_human_resource_add_form" model="ir.ui.view">
-        <field name="name">report.report_request.form</field>
-        <field name="model">report.report_request</field>
-        <field name="arch" type="xml">
-            <form string="Tạo một yêu cầu báo cáo">
-                <div>
-                    <div style="display: flex">
-                        <sheet>
-                            <div class="width:100%;">
-                                <label for="title"/>
-                                <h1 class="mb8">
-                                    <field name="title" placeholder="Nhập tiêu đề"/>
-                                </h1>
-                            </div>
-                            <group>
-                                <field name="assignee" placeholder="Chọn nhân viên phụ trách"/>
-                            </group>
-                            <group>
-                                <field name="department" placeholder="Chọn phòng ban phụ trách"/>
-                            </group>
-                            <label for="description"/>
-                            <field name="description" placeholder="Nhập mô tả cho yêu cầu"/>
-                        </sheet>
-                        <sheet style="width: 50%">
-                            <field name="report">
-                                <tree>
-                                    <field name="write_uid" string="Nhân viên"/>
-                                    <field name="title"/>
-                                    <field name="state"/>
-                                    <field name="files" widget="one2many_tags"/>
-                                </tree>
-                            </field>
-                        </sheet>
-                    </div>
-                </div>
-
-            </form>
-        </field>
-    </record>
+<!--    <record id="report_request_human_resource_add_form" model="ir.ui.view">-->
+<!--        <field name="name">report.report_request.form</field>-->
+<!--        <field name="model">report.report_request</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Tạo một yêu cầu báo cáo">-->
+<!--                <div>-->
+<!--                    <div style="display: flex">-->
+<!--                        <field name="state" invisible="1" />-->
+<!--                        <sheet>-->
+<!--                            <div class="width:100%;">-->
+<!--                                <label for="title"/>-->
+<!--                                <h1 class="mb8">-->
+<!--                                    <field name="title" placeholder="Nhập tiêu đề"/>-->
+<!--                                </h1>-->
+<!--                            </div>-->
+<!--                            <group>-->
+<!--                                <field name="assignee" placeholder="Chọn nhân viên phụ trách"/>-->
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="department" placeholder="Chọn phòng ban phụ trách"/>-->
+<!--                            </group>-->
+<!--                            <label for="description"/>-->
+<!--                            <field name="description" placeholder="Nhập mô tả cho yêu cầu"/>-->
+<!--                        </sheet>-->
+<!--                        <sheet style="width: 50%"-->
+<!--                               attrs="{'invisible': ['|', ('state', '=', 'created'), ('state', '=', 'rejected')]}">-->
+<!--                            <field name="report">-->
+<!--                                <tree>-->
+<!--                                    <field name="write_uid" string="Nhân viên"/>-->
+<!--                                    <field name="title"/>-->
+<!--                                    <field name="state"/>-->
+<!--                                    <field name="files" widget="one2many_tags"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </sheet>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
 </odoo>
